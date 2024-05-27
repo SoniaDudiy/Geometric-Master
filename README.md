@@ -1,14 +1,15 @@
-# Test-task-DiversiPy-
+# Geometric Master
 
-Підстава для розроблення
+Basis for development
 
-Програму розроблено відповідно до тестового завдання компанії DiversiPy.
+The program was developed in accordance with the test task of DiversiPy
+
 Python Developer: Sofiia Dudii
 
 
 # Shape Calculator
 
-This is a simple Python program that calculates the area and perimeter of various 2D shapes. The program supports calculating the area and perimeter of the following shapes:
+Geometric Master - this is a simple Python program that calculates the area and perimeter of various 2D shapes. The program supports calculating the area and perimeter of the following shapes:
 - Square
 - Rectangle
 - Triangle
