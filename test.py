@@ -1,5 +1,5 @@
 import unittest
-from main import Square, Rectangle, Triangle, Circle
+from main import Square, Rectangle, RightAngledTriangle, Circle
 
 class TestShapeCalculations(unittest.TestCase):
     def test_square(self):
@@ -12,8 +12,8 @@ class TestShapeCalculations(unittest.TestCase):
         self.assertAlmostEqual(rectangle.area(), 24)
         self.assertAlmostEqual(rectangle.perimeter(), 20)
 
-    def test_triangle(self):
-        triangle = Triangle(3, 4)
+    def test_rightAngledTriangle(self):
+        triangle = RightAngledTriangle(3, 4)
         self.assertAlmostEqual(triangle.area(), 6)
         self.assertAlmostEqual(triangle.perimeter(), 12)
 

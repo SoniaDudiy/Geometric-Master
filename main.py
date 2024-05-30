@@ -31,7 +31,7 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.length + self.width)
 
-class Triangle(Shape):
+class RightAngledTriangle(Shape):
     def __init__(self, base, height):
         self.base = base
         self.height = height
@@ -51,7 +51,7 @@ class Square(Rectangle):
 def calculate_shape():
     print("Shape Area and Perimeter Calculator")
     print("-----------------------------------")
-    print("Available Shapes: Square, Rectangle, Triangle, Circle")
+    print("Available Shapes: Square, Rectangle, RightAngledTriangle, Circle")
     user_shape = input("Enter the name of the shape: ").lower()
 
     if user_shape == "square":
@@ -64,29 +64,30 @@ def calculate_shape():
         length = abs(float(top_right[0]) - float(bottom_left[0]))
         width = abs(float(top_right[1]) - float(bottom_left[1]))
         shape = Rectangle(length, width)
-    elif user_shape == "triangle":
+    elif user_shape == "rightAngledTriangle":
         point1 = input("Enter the coordinates of the first point (format: x y): ").split()
         point2 = input("Enter the coordinates of the second point (format: x y): ").split()
         point3 = input("Enter the coordinates of the third point (format: x y): ").split()
         base = abs(float(point2[0]) - float(point1[0]))
         height = abs(float(point3[1]) - float(point1[1]))
-        shape = Triangle(base, height)
+        shape = RightAngledTriangle(base, height)
     elif user_shape == "circle":
         center = input("Enter the coordinates of the center (format: x y): ").split()
         radius = float(input("Enter the radius of the circle: "))
         shape = Circle(radius)
     else:
-        print("Invalid shape! Please choose from Square, Rectangle, Triangle, or Circle.")
+        print("Invalid shape! Please choose from Square, Rectangle, RightAngledTriangle, or Circle.")
         return
 
     print(f"Area of the {user_shape.capitalize()}: {shape.area()}")
     print(f"Perimeter of the {user_shape.capitalize()}: {shape.perimeter()}")
 
-calculate_shape()
 
-while True:
-    choice = input("Would you like to calculate the area of another shape? (yes/no): ").lower()
-    if choice != "yes":
-        break
+def main():
     calculate_shape()
 
+    while True:
+        choice = input("Would you like to calculate the area of another shape? (yes/no): ").lower()
+        if choice != "yes":
+            break
+    calculate_shape()
